@@ -1,0 +1,169 @@
+/* --------------------------
+   Task 4: basestyle.css
+   Styles the entire website (index, demos, interests, qualifications)
+--------------------------- */
+
+/* ✅ CSS VARIABLES + LIGHT/DARK MODE */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #0055ff;
+  --secondary-color: #f0f0f0;
+  --font-main: 'Segoe UI', sans-serif; /* ✅ Alternative font */
+}
+
+/* ✅ DARK MODE SUPPORT */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #111111;
+    --text-color: #ffffff;
+    --primary-color: #3399ff;
+    --secondary-color: #1a1a1a;
+  }
+}
+
+/* ✅ GLOBAL RESET (DRY + MOBILE-FIRST + RELATIVE UNITS) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding-bottom: 4rem;
+}
+
+/* ✅ NAVIGATION BAR */
+nav {
+  background: var(--secondary-color);
+  padding: 1rem;
+  z-index: 10;
+}
+
+/* ✅ FLEXBOX (used for nav items) */
+nav ul {
+  display: flex;               /* ✅ Flexbox */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--primary-color);  /* ✅ Pseudo selector */
+}
+
+/* ✅ STICKY TOP NAV (DESKTOP) */
+@media (min-width: 768px) {
+  nav {
+    position: sticky;
+    top: 0;
+  }
+}
+
+/* ✅ FIXED BOTTOM NAV (MOBILE) */
+@media (max-width: 767px) {
+  nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+/* ✅ MAIN CONTENT AREA */
+main {
+  padding: 2rem;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+/* ✅ RESPONSIVE IMAGES */
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 10px;
+}
+
+/* ✅ FOOTER */
+footer {
+  background: var(--secondary-color);
+  color: var(--text-color);
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ✅ FLEXBOX EXAMPLE: 4+ items */
+.flex-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.flex-group div {
+  flex: 1 1 calc(25% - 1rem);
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* ✅ GRID EXAMPLE: 4+ items */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* ✅ MEDIA QUERIES to override mobile styles */
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* ✅ UTILITY CLASSES */
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #0033aa;
+}

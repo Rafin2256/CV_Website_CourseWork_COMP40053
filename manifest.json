@@ -1,0 +1,39 @@
+{
+    "name": "My Portfolio App",
+    "short_name": "Portfolio",
+    "description": "This is my website portfolio project for my assignment.",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0055ff",
+    "icons": [
+      {
+        "src": "images/icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "images/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+      {
+        "src": "images/icon-maskable.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "images/screenshot-mobile.png",
+        "sizes": "674x1324",
+        "type": "image/png"
+      },
+      {
+        "src": "images/screenshot-desktop.png",
+        "sizes": "2892x1661",
+        "type": "image/png"
+      }
+    ]
+  }
